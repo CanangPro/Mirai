@@ -20,7 +20,7 @@
   <!-- Fonts & Icons -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
-  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&family=Space+Mono&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Space+Mono&display=swap" rel="stylesheet">
   
   <!-- CSS Stylesheets -->
   <link rel="stylesheet" href="./styles.css"> 
@@ -41,6 +41,7 @@
           },
           fontFamily: {
             'primary': ['Nunito Sans', 'Inter', 'sans-serif'],
+            'serif': ['Playfair Display', 'Georgia', 'serif'],
             'mono': ['Space Mono', 'monospace'],
           },
           borderRadius: {
@@ -148,35 +149,64 @@
         <div class="relative z-30 px-0 mt-20 md:mt-32 w-full">
           <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
             <!-- Card 1 -->
-            <div class="bg-neutral-white p-8 md:p-10 rounded-xl shadow-card space-y-6 flex flex-col justify-between" data-animation-on-scroll="">
-              <div class="space-y-1">
-                <h3 class="text-brand-primary text-3xl md:text-4xl font-extrabold tracking-tight">50+ UMKM</h3>
-                <p class="text-brand-primary text-xs font-semibold uppercase tracking-wide">Telah Berkolaborasi & Naik Kelas</p>
+            <div class="bg-brand-primary p-8 md:p-10 rounded-xl shadow-card space-y-6 flex flex-col justify-between border border-neutral-white/10" data-animation-on-scroll="">
+              <div>
+                <div class="inline-flex items-center gap-1.5 bg-neutral-white/10 text-brand-accent text-[10px] font-bold px-3 py-1 rounded-full border border-neutral-white/15 w-max mb-4 uppercase tracking-wider">
+                  <span class="text-brand-accent font-extrabold">✓</span> Kemitraan UMKM
+                </div>
+                <h3 class="text-neutral-white text-3xl md:text-4xl font-serif font-extrabold tracking-tight">50+ UMKM</h3>
+                <p class="text-neutral-white/70 text-xs mt-2 leading-relaxed">Telah berkolaborasi & sukses menaikkan standar branding produk digital mereka.</p>
+                <div class="mt-6">
+                  <a href="#showcase" class="inline-flex items-center gap-2 bg-neutral-white text-brand-primary text-xs font-bold px-4 py-2 rounded-full hover:bg-brand-accent hover:scale-[1.03] transition-all group">
+                    <span>Lihat Mitra</span>
+                    <span class="w-5 h-5 rounded-full bg-brand-primary text-neutral-white flex items-center justify-center font-bold transition-transform group-hover:translate-x-1">→</span>
+                  </a>
+                </div>
               </div>
-              <img src="https://images.pexels.com/photos/3825586/pexels-photo-3825586.jpeg?w=400&h=120&fit=crop" alt="Foto Studio Produk" class="w-full h-20 object-cover rounded-md">
+              <div class="overflow-hidden rounded-lg border border-neutral-white/10">
+                <img src="https://images.pexels.com/photos/3825586/pexels-photo-3825586.jpeg?w=400&h=160&fit=crop" alt="Foto Studio Produk" class="w-full h-24 object-cover">
+              </div>
             </div>
             
             <!-- Card 2 -->
-            <div class="bg-black p-8 md:p-10 rounded-xl shadow-card flex flex-col justify-between min-h-[240px]" data-animation-on-scroll="">
-              <div class="space-y-1">
-                <h3 class="text-neutral-white text-3xl md:text-4xl font-extrabold tracking-tight">3 Pilar Jasa</h3>
-                <p class="text-neutral-white/70 text-xs font-semibold uppercase tracking-wide">Layanan Media Kreatif Terintegrasi</p>
+            <div class="bg-brand-primary p-8 md:p-10 rounded-xl shadow-card flex flex-col justify-between border border-neutral-white/10 min-h-[280px]" data-animation-on-scroll="">
+              <div>
+                <div class="inline-flex items-center gap-1.5 bg-neutral-white/10 text-brand-accent text-[10px] font-bold px-3 py-1 rounded-full border border-neutral-white/15 w-max mb-4 uppercase tracking-wider">
+                  <span class="text-brand-accent font-extrabold">✓</span> Pilar Jasa
+                </div>
+                <h3 class="text-neutral-white text-3xl md:text-4xl font-serif font-extrabold tracking-tight">3 Pilar Jasa</h3>
+                <p class="text-neutral-white/70 text-xs mt-2 leading-relaxed">Layanan media kreatif terintegrasi untuk menyajikan visual bisnis yang komprehensif.</p>
+                <div class="flex flex-wrap gap-1.5 mt-4">
+                  <span class="px-2 py-1 rounded bg-brand-accent text-brand-primary text-[9px] font-bold uppercase tracking-wider">Foto & Video</span>
+                  <span class="px-2 py-1 rounded bg-neutral-white text-brand-primary text-[9px] font-bold uppercase tracking-wider">Desain Grafis</span>
+                  <span class="px-2 py-1 rounded bg-neutral-white/10 text-neutral-white text-[9px] font-bold uppercase tracking-wider border border-neutral-white/10">Website / IT</span>
+                </div>
               </div>
-              <div class="flex flex-wrap gap-2 mt-4">
-                <span class="px-3 py-1.5 rounded bg-brand-accent text-brand-primary text-[11px] font-bold uppercase tracking-wider">Foto & Video</span>
-                <span class="px-3 py-1.5 rounded bg-neutral-white text-brand-primary text-[11px] font-bold uppercase tracking-wider">Desain Grafis</span>
-                <span class="px-3 py-1.5 rounded bg-brand-primary text-neutral-white text-[11px] font-bold uppercase tracking-wider border border-neutral-white/10">Website / IT</span>
+              <div class="mt-6">
+                <a href="#services" class="inline-flex items-center gap-2 bg-neutral-white text-brand-primary text-xs font-bold px-4 py-2 rounded-full hover:bg-brand-accent hover:scale-[1.03] transition-all group">
+                  <span>Detail Layanan</span>
+                  <span class="w-5 h-5 rounded-full bg-brand-primary text-neutral-white flex items-center justify-center font-bold transition-transform group-hover:translate-x-1">→</span>
+                </a>
               </div>
             </div>
 
             <!-- Card 3 -->
-            <div class="bg-brand-accent p-8 md:p-10 rounded-xl shadow-card relative overflow-hidden flex flex-col justify-between" data-animation-on-scroll="">
-              <div class="relative z-10 space-y-1">
-                <h3 class="text-brand-primary text-3xl md:text-4xl font-extrabold tracking-tight">Jawa Timur</h3>
-                <p class="text-brand-primary text-xs font-semibold uppercase tracking-wide">Jombang • Mojokerto • Surabaya</p>
+            <div class="bg-brand-primary p-8 md:p-10 rounded-xl shadow-card space-y-6 flex flex-col justify-between border border-neutral-white/10" data-animation-on-scroll="">
+              <div>
+                <div class="inline-flex items-center gap-1.5 bg-neutral-white/10 text-brand-accent text-[10px] font-bold px-3 py-1 rounded-full border border-neutral-white/15 w-max mb-4 uppercase tracking-wider">
+                  <span class="text-brand-accent font-extrabold">✓</span> Wilayah Operasi
+                </div>
+                <h3 class="text-neutral-white text-3xl md:text-4xl font-serif font-extrabold tracking-tight">Jawa Timur</h3>
+                <p class="text-neutral-white/70 text-xs mt-2 leading-relaxed">Melayani secara intensif untuk wilayah operasional regional Jawa Timur.</p>
+                <div class="mt-6">
+                  <a href="#contact" class="inline-flex items-center gap-2 bg-neutral-white text-brand-primary text-xs font-bold px-4 py-2 rounded-full hover:bg-brand-accent hover:scale-[1.03] transition-all group">
+                    <span>Hubungi Kami</span>
+                    <span class="w-5 h-5 rounded-full bg-brand-primary text-neutral-white flex items-center justify-center font-bold transition-transform group-hover:translate-x-1">→</span>
+                  </a>
+                </div>
               </div>
-              <div class="mt-6 relative z-10">
-                <img src="https://images.pexels.com/photos/3182773/pexels-photo-3182773.jpeg?w=400&h=200&fit=crop" alt="Karya Grafis" class="w-full h-24 object-cover opacity-60 rounded-lg">
+              <div class="overflow-hidden rounded-lg border border-neutral-white/10">
+                <img src="https://images.pexels.com/photos/3182773/pexels-photo-3182773.jpeg?w=400&h=160&fit=crop" alt="Tim Kreatif Jawa Timur" class="w-full h-24 object-cover">
               </div>
             </div>
           </div>

@@ -10,8 +10,10 @@ document.addEventListener('DOMContentLoaded', () => {
       header.querySelector('nav').classList.add('bg-[rgba(11,49,51,0.95)]', 'shadow-lg');
       header.querySelector('nav').classList.remove('bg-[rgba(237,236,233,0.93)]');
       // Change logo and menu link color states to light when scrolled since nav turns dark
-      header.querySelector('.logo-link').classList.remove('text-brand-primary');
-      header.querySelector('.logo-link').classList.add('text-brand-accent');
+      const logoImg = header.querySelector('.logo-img');
+      if (logoImg) {
+        logoImg.classList.add('brightness-0', 'invert');
+      }
       header.querySelectorAll('.nav-desktop-link').forEach(link => {
         link.classList.remove('text-brand-primary', 'hover:bg-black/5');
         link.classList.add('text-neutral-white', 'hover:bg-white/10');
@@ -27,8 +29,10 @@ document.addEventListener('DOMContentLoaded', () => {
       header.querySelector('nav').classList.remove('bg-[rgba(11,49,51,0.95)]', 'shadow-lg');
       header.querySelector('nav').classList.add('bg-[rgba(237,236,233,0.93)]');
       // Reset color states
-      header.querySelector('.logo-link').classList.add('text-brand-primary');
-      header.querySelector('.logo-link').classList.remove('text-brand-accent');
+      const logoImg = header.querySelector('.logo-img');
+      if (logoImg) {
+        logoImg.classList.remove('brightness-0', 'invert');
+      }
       header.querySelectorAll('.nav-desktop-link').forEach(link => {
         link.classList.add('text-brand-primary', 'hover:bg-black/5');
         link.classList.remove('text-neutral-white', 'hover:bg-white/10');

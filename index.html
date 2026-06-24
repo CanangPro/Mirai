@@ -1,497 +1,520 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MIRAI | Elevate Your Brand With Creative Excellence</title>
-  <!-- Meta Descriptions for SEO -->
-  <meta name="description" content="MIRAI is a premier creative brand agency building brands that inspire. We specialize in branding, photography, video production, web development, and digital strategy.">
-  <meta name="keywords" content="brand agency, branding, production studio, web development, digital strategy, MIRAI">
-  <meta name="author" content="MIRAI Team">
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Mirai Creative Project | Elevasi Brand UMKM dengan Kreativitas Visual</title>
   
-  <!-- CSS Stylesheet -->
-  <link rel="stylesheet" href="style.css">
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Mirai Creative Project (MiraiPro) adalah agensi brand management di Jawa Timur (Jombang, Mojokerto, Surabaya). Kami menyediakan Jasa Foto & Video Produk, Desain Grafis, dan Pembuatan Website untuk memajukan bisnis UMKM Anda.">
+  <meta name="keywords" content="brand management, jasa foto produk, jasa video produk, jasa desain grafis Mojokerto, jasa website Jombang, pembuatan website Surabaya, agensi kreatif UMKM, Mirai Creative Project, MiraiPro">
+  <meta name="author" content="Mirai Creative Project">
+
+  <!-- Open Graph / Social Media Meta Tags -->
+  <meta property="og:title" content="Mirai Creative Project | Elevasi Brand UMKM dengan Kreativitas Visual">
+  <meta property="og:description" content="Tingkatkan brand awareness dan penjualan produk bisnis Anda lewat foto studio, desain premium, dan website interaktif kami.">
+  <meta property="og:url" content="https://mirai-project.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg?w=800&h=600&fit=crop">
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&family=Space+Mono&display=swap" rel="stylesheet">
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="./styles.css"> 
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      important: '#app-root',
+      theme: {
+        extend: {
+          colors: {
+            'brand-primary': 'rgb(11, 49, 51)', // Dark teal
+            'brand-accent': 'rgb(220, 253, 163)', // Light lime
+            'neutral-background': 'rgb(246, 245, 242)', // Light beige
+            'neutral-white': 'rgb(255, 255, 255)',
+            'text-primary': 'rgb(11, 49, 51)',
+            'text-muted': 'rgba(11, 49, 51, 0.7)',
+            'text-on-dark': 'rgb(255, 255, 255)',
+          },
+          fontFamily: {
+            'primary': ['Nunito Sans', 'Inter', 'sans-serif'],
+            'mono': ['Space Mono', 'monospace'],
+          },
+          borderRadius: {
+            'sm': '4px',
+            'md': '8px',
+            'lg': '12px',
+            'xl': '28px',
+            'full': '9999px',
+          },
+          spacing: {
+            'section-gap': '80px',
+            'hero-pt': '150px',
+          },
+          boxShadow: {
+            'card': '0 4px 20px rgba(0, 0, 0, 0.05)',
+          }
+        },
+      },
+      plugins: [],
+    }
+  </script>
 </head>
-<body>
 
-  <!-- ==========================================================================
-       HEADER & NAVIGATION
-       ========================================================================== -->
-  <header class="header" id="header">
-    <div class="container nav-container">
-      <a href="#home" class="logo">
-        MIRAI
-      </a>
-      
-      <ul class="nav-menu" id="nav-menu">
-        <li><a href="#home" class="nav-link active">Home</a></li>
-        <li><a href="#services" class="nav-link">Services</a></li>
-        <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
-        <li><a href="#difference" class="nav-link">About Us</a></li>
-        <li><a href="#testimonials" class="nav-link">Blog</a></li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
-        <li class="nav-cta"><a href="#contact" class="btn btn-accent">Get Started</a></li>
-      </ul>
-      
-      <div class="mobile-toggle" id="mobile-toggle">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </div>
-  </header>
-
-  <!-- ==========================================================================
-       HERO SECTION
-       ========================================================================== -->
-  <section class="hero" id="home">
-    <div class="hero-grid">
-      <div class="hero-content-card reveal">
-        <h1>Elevate Your Brand With <span>Creative Excellence.</span> We Build Brands That Inspire.</h1>
-        <div>
-          <a href="#contact" class="btn btn-accent">Work With Us</a>
-        </div>
-      </div>
-      <div class="hero-image-spacer"></div>
-    </div>
-  </section>
-
-  <!-- ==========================================================================
-       SERVICES SECTION
-       ========================================================================== -->
-  <section class="services section" id="services">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="subtitle">Our Services</span>
-        <h2>What We Excel In</h2>
-        <p>We combine design strategy, high-end media production, and engineering to deliver digital solutions that set your brand apart.</p>
-      </div>
-      
-      <div class="services-grid">
-        <!-- Card 1: Branding -->
-        <div class="service-card reveal">
-          <div class="service-icon">
-            <svg viewBox="0 0 24 24">
-              <path d="M14.06,9l.94.94L5.92,19H5v-.92L14.06,9M17.66,3a1,1,0,0,0-.71.29l-1.83,1.83,3.75,3.75,1.83-1.83a1,1,0,0,0,0-1.41L18.37,3.29A1,1,0,0,0,17.66,3M14.06,6.19,3,17.25V21H6.75L17.81,9.94Z"/>
-            </svg>
-          </div>
-          <h3>Branding</h3>
-          <p>Identity Design, strategy, guidelines, logo application, marketing collateral execution, and comprehensive brand campaigns.</p>
-        </div>
-        
-        <!-- Card 2: Photo & Video -->
-        <div class="service-card reveal reveal-delay-1">
-          <div class="service-icon">
-            <svg viewBox="0 0 24 24">
-              <path d="M4,4H7L9,2H15L17,4H20A2,2,0,0,1,22,6V18A2,2,0,0,1,20,20H4A2,2,0,0,1,2,18V6A2,2,0,0,1,4,4M12,7A5,5,0,0,0,7,12A5,5,0,0,0,12,17A5,5,0,0,0,17,12A5,5,0,0,0,12,7M12,9A3,3,0,0,1,15,12A3,3,0,0,1,12,15A3,3,0,0,1,9,12A3,3,0,0,1,12,9Z"/>
-            </svg>
-          </div>
-          <h3>Photo & Video</h3>
-          <p>Commercial photography, luxury cinematography, product shoots, post-production editing, and creative storytelling assets.</p>
-        </div>
-        
-        <!-- Card 3: Web Development -->
-        <div class="service-card reveal reveal-delay-2">
-          <div class="service-icon">
-            <svg viewBox="0 0 24 24">
-              <path d="M12.89,3L14.85,3.4L11.11,21L9.15,20.6L12.89,3M19.59,12L16,8.41V5.58L22.42,12L16,18.41V15.58L19.59,12M1.58,12L8,5.58V8.41L4.41,12L8,15.58V18.41L1.58,12Z"/>
-            </svg>
-          </div>
-          <h3>Web Development</h3>
-          <p>Bespoke web architecture, responsive e-commerce portals, custom CMS integrations, and fast, interactive front-end layouts.</p>
-        </div>
-        
-        <!-- Card 4: Digital Strategy -->
-        <div class="service-card reveal reveal-delay-3">
-          <div class="service-icon">
-            <svg viewBox="0 0 24 24">
-              <path d="M16,6l2.29,2.29-4.88,4.88-4-4L2,16.59,3.41,18l6-6,4,4,6.3-6.29L22,12V6H16Z"/>
-            </svg>
-          </div>
-          <h3>Digital Strategy</h3>
-          <p>Data-led brand positioning, targeted search engine marketing, user acquisition setups, and performance conversion metrics.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==========================================================================
-       PORTFOLIO / LATEST WORK SECTION
-       ========================================================================== -->
-  <section class="portfolio section" id="portfolio">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="subtitle">Latest Work</span>
-        <h2>Proven Projects</h2>
-        <p>Explore a selection of our recent campaigns and digital transformations built for forward-thinking brands.</p>
-      </div>
-      
-      <!-- Filter Buttons -->
-      <div class="portfolio-filters reveal">
-        <button class="filter-btn active" data-filter="all">All Projects</button>
-        <button class="filter-btn" data-filter="branding">Branding</button>
-        <button class="filter-btn" data-filter="production">Production</button>
-        <button class="filter-btn" data-filter="web-design">Web Design</button>
-      </div>
-      
-      <!-- Portfolio Grid -->
-      <div class="portfolio-grid">
-        <!-- Item 1: Branding -->
-        <div class="portfolio-item reveal" data-category="branding">
-          <img src="assets/work_1.png" alt="Auba Perfume Luxury Cosmetics Branding" class="portfolio-img" width="400" height="300">
-          <div class="portfolio-overlay">
-            <span class="category">Branding</span>
-            <h4>Project AUBA Cosmetics</h4>
-            <div class="view-project">
-              <span>View Case Study</span>
-              <svg viewBox="0 0 24 24"><path d="M12,9A3,3,0,1,1,9,12A3,3,0,0,1,12,9M12,4.5C7,4.5,2.73,7.61,1,12c1.73,4.39,6,7.5,11,7.5s9.27-3.11,11-7.5C21.27,7.61,17,4.5,12,4.5M12,17a5,5,0,1,1,5-5A5,5,0,0,1,12,17Z"/></svg>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Item 2: Production -->
-        <div class="portfolio-item reveal reveal-delay-1" data-category="production">
-          <img src="assets/work_2.png" alt="Luxe Editorial Fashion Campaign Production" class="portfolio-img" width="400" height="300">
-          <div class="portfolio-overlay">
-            <span class="category">Production</span>
-            <h4>Luxe Editorial Campaign</h4>
-            <div class="view-project">
-              <span>View Case Study</span>
-              <svg viewBox="0 0 24 24"><path d="M12,9A3,3,0,1,1,9,12A3,3,0,0,1,12,9M12,4.5C7,4.5,2.73,7.61,1,12c1.73,4.39,6,7.5,11,7.5s9.27-3.11,11-7.5C21.27,7.61,17,4.5,12,4.5M12,17a5,5,0,1,1,5-5A5,5,0,0,1,12,17Z"/></svg>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Item 3: Web Design -->
-        <div class="portfolio-item reveal reveal-delay-2" data-category="web-design">
-          <img src="assets/work_3.png" alt="Corporate Agency Digital Portal Web Design" class="portfolio-img" width="400" height="300">
-          <div class="portfolio-overlay">
-            <span class="category">Web Design</span>
-            <h4>Drewsign Platform</h4>
-            <div class="view-project">
-              <span>View Case Study</span>
-              <svg viewBox="0 0 24 24"><path d="M12,9A3,3,0,1,1,9,12A3,3,0,0,1,12,9M12,4.5C7,4.5,2.73,7.61,1,12c1.73,4.39,6,7.5,11,7.5s9.27-3.11,11-7.5C21.27,7.61,17,4.5,12,4.5M12,17a5,5,0,1,1,5-5A5,5,0,0,1,12,17Z"/></svg>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Item 4: Branding -->
-        <div class="portfolio-item reveal" data-category="branding">
-          <img src="assets/work_4.png" alt="Minimalist Amber Skincare Packaging Mockup" class="portfolio-img" width="400" height="300">
-          <div class="portfolio-overlay">
-            <span class="category">Branding</span>
-            <h4>Aera Skincare Collection</h4>
-            <div class="view-project">
-              <span>View Case Study</span>
-              <svg viewBox="0 0 24 24"><path d="M12,9A3,3,0,1,1,9,12A3,3,0,0,1,12,9M12,4.5C7,4.5,2.73,7.61,1,12c1.73,4.39,6,7.5,11,7.5s9.27-3.11,11-7.5C21.27,7.61,17,4.5,12,4.5M12,17a5,5,0,1,1,5-5A5,5,0,0,1,12,17Z"/></svg>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Item 5: Branding -->
-        <div class="portfolio-item reveal reveal-delay-1" data-category="branding">
-          <img src="assets/work_5.png" alt="Editorial Brand Stationery Mockup Collection" class="portfolio-img" width="400" height="300">
-          <div class="portfolio-overlay">
-            <span class="category">Branding</span>
-            <h4>Lexe Corporate Identity</h4>
-            <div class="view-project">
-              <span>View Case Study</span>
-              <svg viewBox="0 0 24 24"><path d="M12,9A3,3,0,1,1,9,12A3,3,0,0,1,12,9M12,4.5C7,4.5,2.73,7.61,1,12c1.73,4.39,6,7.5,11,7.5s9.27-3.11,11-7.5C21.27,7.61,17,4.5,12,4.5M12,17a5,5,0,1,1,5-5A5,5,0,0,1,12,17Z"/></svg>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Item 6: Web Design -->
-        <div class="portfolio-item reveal reveal-delay-2" data-category="web-design">
-          <img src="assets/work_6.png" alt="SaaS Product Mobile UI Design Layout" class="portfolio-img" width="400" height="300">
-          <div class="portfolio-overlay">
-            <span class="category">Web Design</span>
-            <h4>Helix Dashboard App</h4>
-            <div class="view-project">
-              <span>View Case Study</span>
-              <svg viewBox="0 0 24 24"><path d="M12,9A3,3,0,1,1,9,12A3,3,0,0,1,12,9M12,4.5C7,4.5,2.73,7.61,1,12c1.73,4.39,6,7.5,11,7.5s9.27-3.11,11-7.5C21.27,7.61,17,4.5,12,4.5M12,17a5,5,0,1,1,5-5A5,5,0,0,1,12,17Z"/></svg>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==========================================================================
-       PARTNERS BAND
-       ========================================================================== -->
-  <section class="partners">
-    <div class="container partners-wrap">
-      <div class="partner-logo">MIRAI</div>
-      <div class="partner-logo">@LOAD</div>
-      <div class="partner-logo">LEMONEDA</div>
-      <div class="partner-logo">Fobok</div>
-      <div class="partner-logo">Denovee</div>
-    </div>
-  </section>
-
-  <!-- ==========================================================================
-       THE MIRAI DIFFERENCE
-       ========================================================================== -->
-  <section class="difference section" id="difference">
-    <div class="container diff-grid">
-      <div class="diff-content reveal">
-        <span class="subtitle" style="text-align: left; margin-left: 0;">Why Choose Us</span>
-        <h2>The Mirai Difference</h2>
-        <p>We do not create basic solutions. We engineer visual identities and digital structures that elevate your business performance and build trust.</p>
-        <a href="#contact" class="btn btn-primary">Discover More</a>
-      </div>
-      
-      <div class="diff-list">
-        <!-- Card 1 -->
-        <div class="diff-card reveal">
-          <div class="diff-icon">💡</div>
-          <h4>Expertise & Vision</h4>
-          <p>Creative strategy combined with technical understanding to ensure high quality and execution consistency.</p>
-        </div>
-        
-        <!-- Card 2 -->
-        <div class="diff-card reveal reveal-delay-1">
-          <div class="diff-icon">🎯</div>
-          <h4>Client-Focused Results</h4>
-          <p>Tailored workflows aligning closely with project targets, metrics, and business requirements.</p>
-        </div>
-        
-        <!-- Card 3 -->
-        <div class="diff-card reveal reveal-delay-2">
-          <div class="diff-icon">⚙️</div>
-          <h4>Creative Metrics</h4>
-          <p>Detailed performance benchmarks to tracking visual effectiveness and interface conversions.</p>
-        </div>
-        
-        <!-- Card 4 -->
-        <div class="diff-card reveal reveal-delay-3">
-          <div class="diff-icon">🚀</div>
-          <h4>Growth Marketing</h4>
-          <p>Integrated performance campaigns that ensure steady traffic, engagement, and conversion growth.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==========================================================================
-       TESTIMONIALS SECTION
-       ========================================================================== -->
-  <section class="testimonials section" id="testimonials">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="subtitle">Testimonials</span>
-        <h2>Proven Results</h2>
-        <p>Here is what our brand partners say about their collaboration and growth with MIRAI.</p>
-      </div>
-      
-      <div class="testimonials-slider reveal">
-        <!-- Prev Button -->
-        <button class="slider-control slider-control-prev" id="slider-prev" aria-label="Previous Testimonial">
-          <svg viewBox="0 0 24 24"><path d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z"/></svg>
-        </button>
-        
-        <!-- Slider Track -->
-        <div class="slider-wrapper">
-          <div class="slider-track" id="slider-track">
-            <!-- Slide 1 -->
-            <div class="testimonial-slide active">
-              <div class="testimonial-card">
-                <p class="testimonial-quote">"Incredible transformation. The brand identity crafted by MIRAI elevated our market presence and helped us connect with our target audience on a deeper level."</p>
-                <div class="testimonial-client">
-                  <span class="client-name">Client X</span>
-                  <span class="client-role">Founder of Auba</span>
-                </div>
-              </div>
-            </div>
-            
-            <!-- Slide 2 -->
-            <div class="testimonial-slide">
-              <div class="testimonial-card">
-                <p class="testimonial-quote">"The professionalism and dedication of their photography team was outstanding. The media campaign was a major success for our new collection launch."</p>
-                <div class="testimonial-client">
-                  <span class="client-name">Client Y</span>
-                  <span class="client-role">Creative Director of Luxe</span>
-                </div>
-              </div>
-            </div>
-            
-            <!-- Slide 3 -->
-            <div class="testimonial-slide">
-              <div class="testimonial-card">
-                <p class="testimonial-quote">"Their web development and UI team designed a highly responsive and stunning website that doubled our digital leads in just two months."</p>
-                <div class="testimonial-client">
-                  <span class="client-name">Client Z</span>
-                  <span class="client-role">Marketing Lead at Drewsign</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Next Button -->
-        <button class="slider-control slider-control-next" id="slider-next" aria-label="Next Testimonial">
-          <svg viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"/></svg>
-        </button>
-        
-        <!-- Slider Dots -->
-        <div class="slider-dots" id="slider-dots">
-          <span class="slider-dot active" data-index="0"></span>
-          <span class="slider-dot" data-index="1"></span>
-          <span class="slider-dot" data-index="2"></span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==========================================================================
-       CONTACT SECTION
-       ========================================================================== -->
-  <section class="contact section" id="contact">
-    <div class="container">
-      <div class="contact-card reveal">
-        <div class="contact-grid">
-          <!-- Form Side -->
-          <div class="contact-form-side">
-            <h2>Let's Build Something Amazing</h2>
-            <form id="contact-form" novalidate>
-              <div class="form-group">
-                <input type="text" id="form-name" class="form-input" placeholder="Name" required>
-                <label for="form-name" class="form-label">Name</label>
-                <span class="form-feedback" id="feedback-name">Please enter your name.</span>
-              </div>
-              
-              <div class="form-group">
-                <input type="email" id="form-email" class="form-input" placeholder="Email" required>
-                <label for="form-email" class="form-label">Email</label>
-                <span class="form-feedback" id="feedback-email">Please enter a valid email address.</span>
-              </div>
-              
-              <div class="form-group">
-                <textarea id="form-details" class="form-input" placeholder="Project Details" required></textarea>
-                <label for="form-details" class="form-label">Project Details</label>
-                <span class="form-feedback" id="feedback-details">Please describe your project.</span>
-              </div>
-              
-              <div class="form-group">
-                <input type="text" id="form-service" class="form-input" placeholder="Services Interested In" required>
-                <label for="form-service" class="form-label">Services Interested In</label>
-                <span class="form-feedback" id="feedback-service">Please mention the services you are interested in.</span>
-              </div>
-              
-              <button type="submit" class="btn btn-accent">Send Message</button>
-            </form>
+<body id="app-root" class="bg-neutral-background antialiased">
+  <div class="font-primary text-text-primary overflow-x-hidden min-h-screen flex flex-col w-full relative">
+    
+    <!-- ==========================================================================
+         NAVIGATION HEADER
+         ========================================================================== -->
+    <header class="fixed top-0 left-0 right-0 z-[100] transition-all duration-300" id="main-header">
+      <div class="max-w-[1440px] mx-auto px-4 md:px-20 py-4">
+        <nav class="bg-[rgba(237,236,233,0.93)] backdrop-blur-md rounded-lg border-b border-brand-primary/10 px-4 md:px-6 py-3 flex items-center justify-between relative transition-all duration-300">
+          <a class="logo-link font-extrabold text-xl md:text-2xl tracking-wider text-brand-primary uppercase flex items-center gap-1 transition-colors duration-300" href="./">
+            MIRAI<span class="font-light text-brand-primary/60">PRO</span>
+          </a>
+          
+          <!-- Desktop Menu -->
+          <div class="hidden lg:flex items-center gap-4">
+            <a class="nav-desktop-link px-4 py-2 text-sm font-semibold rounded-md transition-all text-brand-primary hover:bg-black/5" href="#services">Layanan Kreatif</a>
+            <a class="nav-desktop-link px-4 py-2 text-sm font-semibold rounded-md transition-all text-brand-primary hover:bg-black/5" href="#about">Tentang Kami</a>
+            <a class="nav-desktop-link px-4 py-2 text-sm font-semibold rounded-md transition-all text-brand-primary hover:bg-black/5" href="#showcase">Portfolio Utama</a>
+            <a class="nav-desktop-link px-4 py-2 text-sm font-semibold rounded-md transition-all text-brand-primary hover:bg-black/5" href="#insights">Edukasi Bisnis</a>
           </div>
           
-          <!-- Info Side -->
-          <div class="contact-info-side">
-            <div>
-              <div class="info-item">
-                <div class="info-icon">
-                  <svg viewBox="0 0 24 24"><path d="M12,11.5A2.5,2.5,0,0,1,9.5,9A2.5,2.5,0,0,1,12,6.5A2.5,2.5,0,0,1,14.5,9A2.5,2.5,0,0,1,12,11.5M12,2A7,7,0,0,0,5,9C5,14.25,12,22,12,22S19,14.25,19,9A7,7,0,0,0,12,2Z"/></svg>
-                </div>
-                <div class="info-text">
-                  <h4>Our Location</h4>
-                  <p>Surabaya, Indonesia<br>Sundeep, 1720</p>
-                </div>
+          <div class="flex items-center gap-4">
+            <a href="#contact" class="hidden sm:inline-block bg-brand-primary text-neutral-white text-sm font-bold px-5 py-2.5 rounded-md hover:bg-brand-primary/90 hover:scale-[1.03] transition-all">
+              Hubungi Kami
+            </a>
+            <!-- Mobile Toggle Button -->
+            <button id="menu-toggle" class="lg:hidden p-2 text-brand-primary transition-colors" aria-label="Buka Menu">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+              </svg>
+            </button>
+          </div>
+
+          <!-- Mobile Dropdown Menu -->
+          <div id="mobile-menu" class="fixed inset-x-0 top-[calc(100%+1rem)] bg-brand-primary border border-neutral-white/10 rounded-xl p-6 shadow-2xl lg:hidden opacity-0 pointer-events-none -translate-y-4">
+            <div class="flex flex-col gap-4 text-neutral-white">
+              <a class="p-3 text-lg font-semibold border-b border-neutral-white/10 hover:text-brand-accent transition-colors" href="#services">Layanan Kreatif</a>
+              <a class="p-3 text-lg font-semibold border-b border-neutral-white/10 hover:text-brand-accent transition-colors" href="#about">Tentang Kami</a>
+              <a class="p-3 text-lg font-semibold border-b border-neutral-white/10 hover:text-brand-accent transition-colors" href="#showcase">Portfolio Utama</a>
+              <a class="p-3 text-lg font-semibold border-b border-neutral-white/10 hover:text-brand-accent transition-colors" href="#insights">Edukasi Bisnis</a>
+              <a class="p-4 mt-2 bg-brand-accent text-brand-primary text-center rounded-lg font-bold hover:brightness-110 transition-all" href="#contact">Mulai Diskusi</a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- ==========================================================================
+         HERO SECTION
+         ========================================================================== -->
+    <main class="flex-grow">
+      <section id="hero" class="relative min-h-screen bg-brand-primary flex flex-col justify-center items-center px-6 md:px-20 pt-28 md:pt-hero-pt pb-32 md:pb-48">
+        <!-- Visual Dynamic Background overlay -->
+        <div class="absolute inset-0 z-0 overflow-hidden">
+          <div class="absolute inset-0 bg-gradient-to-b from-brand-primary/40 via-brand-primary/75 to-brand-primary z-10"></div>
+          <img src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?w=1920&h=1080&fit=crop" alt="Tim Kreatif Mirai" class="w-full h-full object-cover">
+        </div>
+
+        <div class="relative z-20 max-w-7xl w-full flex flex-col lg:flex-row justify-between items-start gap-8 md:gap-12">
+          <div class="max-w-3xl space-y-6" data-animation-on-scroll="">
+            <div class="inline-flex bg-neutral-white/10 backdrop-blur-md px-3 py-1.5 rounded-sm border border-neutral-white/20">
+              <span class="font-mono text-[10px] uppercase tracking-widest text-brand-accent">Partner Utama Pertumbuhan UMKM Jawa Timur</span>
+            </div>
+            <h1 class="text-brand-accent text-4xl md:text-7xl font-extrabold leading-[1.1] tracking-tight">
+              Kreativitas Estetis.<br>Elevasi Brand Anda.
+            </h1>
+          </div>
+
+          <div class="lg:max-w-xs md:pt-10" data-animation-on-scroll="">
+            <p class="text-neutral-white text-base md:text-lg font-medium leading-relaxed opacity-95">
+              Kami menyatukan fotografi produk kelas studio, desain grafis premium, serta teknologi web modern untuk membangun reputasi bisnis yang kuat dan terpercaya.
+            </p>
+            <div class="mt-6">
+              <a href="#contact" class="inline-block bg-brand-accent text-brand-primary px-6 py-3 rounded-lg font-bold text-sm hover:scale-[1.03] transition-all">
+                Konsultasi Gratis
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Statistics Cards -->
+        <div class="relative z-30 px-0 mt-20 md:mt-32 w-full">
+          <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+            <!-- Card 1 -->
+            <div class="bg-neutral-white p-8 md:p-10 rounded-xl shadow-card space-y-6 flex flex-col justify-between" data-animation-on-scroll="">
+              <div class="space-y-1">
+                <h3 class="text-brand-primary text-3xl md:text-4xl font-extrabold tracking-tight">50+ UMKM</h3>
+                <p class="text-brand-primary text-xs font-semibold uppercase tracking-wide">Telah Berkolaborasi & Naik Kelas</p>
               </div>
-              
-              <div class="info-item">
-                <div class="info-icon">
-                  <svg viewBox="0 0 24 24"><path d="M20,4H4C2.89,4,2,4.89,2,6V18A2,2,0,0,0,4,20H20A2,2,0,0,0,22,18V6A2,2,0,0,0,20,4M20,8L12,13L4,8V6L12,11L20,6V8Z"/></svg>
-                </div>
-                <div class="info-text">
-                  <h4>Email Us</h4>
-                  <p><a href="mailto:info@miraiprj.com">info@miraiprj.com</a></p>
-                </div>
-              </div>
-              
-              <div class="info-item">
-                <div class="info-icon">
-                  <svg viewBox="0 0 24 24"><path d="M6.62,10.79C8.06,13.62,10.38,15.94,13.21,17.38L15.41,15.18C15.69,14.9,16.08,14.82,16.43,14.93C17.55,15.3,18.75,15.5,20,15.5A1,1,0,0,1,21,16.5V20A1,1,0,0,1,20,21A17,17,0,0,1,3,4A1,1,0,0,1,4,3H7.5A1,1,0,0,1,8.5,4C8.5,5.25,8.7,6.45,9.07,7.57C9.18,7.92,9.1,8.31,8.82,8.59L6.62,10.79Z"/></svg>
-                </div>
-                <div class="info-text">
-                  <h4>Call Us</h4>
-                  <p><a href="tel:+62315551234">+62 31 555 1234</a></p>
-                </div>
-              </div>
+              <img src="https://images.pexels.com/photos/3825586/pexels-photo-3825586.jpeg?w=400&h=120&fit=crop" alt="Foto Studio Produk" class="w-full h-20 object-cover rounded-md">
             </div>
             
-            <div>
-              <div class="social-links">
-                <a href="#" class="social-btn" aria-label="Facebook">
-                  <svg viewBox="0 0 24 24"><path d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.94 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96C18.34 21.21 22 17.06 22 12.06C22 6.53 17.5 2.04 12 2.04Z"/></svg>
-                </a>
-                <a href="#" class="social-btn" aria-label="Instagram">
-                  <svg viewBox="0 0 24 24"><path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8,0,0,1,16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8,0,0,1,7.8,2M7.6,4A3.6,3.6,0,0,0,4,7.6V16.4A3.6,3.6,0,0,0,7.6,20H16.4A3.6,3.6,0,0,0,20,16.4V7.6A3.6,3.6,0,0,0,16.4,4H7.6M12,7A5,5,0,0,1,17,12A5,5,0,0,1,12,17A5,5,0,0,1,7,12A5,5,0,0,1,12,7M12,9A3,3,0,0,0,9,12A3,3,0,0,0,12,15A3,3,0,0,0,15,12A3,3,0,0,0,12,9M17.25,5.5A1.25,1.25,0,0,1,18.5,6.75A1.25,1.25,0,0,1,17.25,8A1.25,1.25,0,0,1,16,6.75A1.25,1.25,0,0,1,17.25,5.5Z"/></svg>
-                </a>
-                <a href="#" class="social-btn" aria-label="LinkedIn">
-                  <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
-                </a>
+            <!-- Card 2 -->
+            <div class="bg-black p-8 md:p-10 rounded-xl shadow-card flex flex-col justify-between min-h-[240px]" data-animation-on-scroll="">
+              <div class="space-y-1">
+                <h3 class="text-neutral-white text-3xl md:text-4xl font-extrabold tracking-tight">3 Pilar Jasa</h3>
+                <p class="text-neutral-white/70 text-xs font-semibold uppercase tracking-wide">Layanan Media Kreatif Terintegrasi</p>
+              </div>
+              <div class="flex -space-x-3 mt-4 md:mt-0">
+                <div class="w-10 h-10 rounded-full bg-brand-accent flex items-center justify-center text-[10px] font-bold border-2 border-black text-brand-primary uppercase">FOTO</div>
+                <div class="w-10 h-10 rounded-full bg-neutral-white flex items-center justify-center text-[10px] font-bold border-2 border-black text-brand-primary uppercase">DESAIN</div>
+                <div class="w-10 h-10 rounded-full bg-brand-primary flex items-center justify-center text-[10px] font-bold border-2 border-black text-neutral-white uppercase">WEB</div>
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="bg-brand-accent p-8 md:p-10 rounded-xl shadow-card relative overflow-hidden flex flex-col justify-between" data-animation-on-scroll="">
+              <div class="relative z-10 space-y-1">
+                <h3 class="text-brand-primary text-3xl md:text-4xl font-extrabold tracking-tight">Jawa Timur</h3>
+                <p class="text-brand-primary text-xs font-semibold uppercase tracking-wide">Jombang • Mojokerto • Surabaya</p>
+              </div>
+              <div class="mt-6 relative z-10">
+                <img src="https://images.pexels.com/photos/3182773/pexels-photo-3182773.jpeg?w=400&h=200&fit=crop" alt="Karya Grafis" class="w-full h-24 object-cover opacity-60 rounded-lg">
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
+      </section>
 
-  <!-- ==========================================================================
-       FOOTER
-       ========================================================================== -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="#home" class="logo" style="margin-bottom: 1rem;">
-            MIRAI
-          </a>
-          <p>Building high-end creative assets and digital structures that inspire. Crafting premium brands since 2020.</p>
+      <!-- ==========================================================================
+           TENTANG KAMI SECTION
+           ========================================================================== -->
+      <section id="about" class="bg-neutral-background py-24 md:py-40 px-6 md:px-20 text-center">
+        <div class="max-w-4xl mx-auto space-y-8 md:space-y-12">
+          <div data-animation-on-scroll="">
+            <span class="inline-block border border-brand-primary rounded-full px-5 py-1.5 font-mono text-[10px] tracking-widest text-brand-primary uppercase font-bold">Tentang Kami</span>
+          </div>
+          <h2 class="text-brand-primary text-2xl md:text-5xl font-extrabold leading-tight tracking-tight px-2" data-animation-on-scroll="">
+            Kami berkomitmen mendampingi para pelaku usaha di Indonesia untuk berkembang pesat melalui materi visual, foto produk premium, desain kemasan, dan website profesional yang kredibel.
+          </h2>
         </div>
-        
-        <div class="footer-col">
-          <h4>Services</h4>
-          <ul class="footer-links">
-            <li class="footer-link"><a href="#services">Branding</a></li>
-            <li class="footer-link"><a href="#services">Photo & Video</a></li>
-            <li class="footer-link"><a href="#services">Web Development</a></li>
-            <li class="footer-link"><a href="#services">Digital Strategy</a></li>
-          </ul>
-        </div>
-        
-        <div class="footer-col">
-          <h4>Navigation</h4>
-          <ul class="footer-links">
-            <li class="footer-link"><a href="#home">Home</a></li>
-            <li class="footer-link"><a href="#portfolio">Our Work</a></li>
-            <li class="footer-link"><a href="#difference">The Difference</a></li>
-            <li class="footer-link"><a href="#testimonials">Reviews</a></li>
-          </ul>
-        </div>
-        
-        <div class="footer-col">
-          <h4>Contact</h4>
-          <ul class="footer-links">
-            <li class="footer-link"><a href="#contact">Contact Support</a></li>
-            <li class="footer-link"><a href="#contact">Get in Touch</a></li>
-            <li class="footer-link"><a href="tel:+62315551234">Call Agency</a></li>
-          </ul>
-        </div>
-      </div>
-      
-      <div class="footer-bottom">
-        <p class="copyright">&copy; 2026 MIRAI. All Rights Reserved.</p>
-        <ul class="legal-links">
-          <li class="legal-link"><a href="#">Terms of Use</a></li>
-          <li class="legal-link"><a href="#">Privacy Policy</a></li>
-        </ul>
-      </div>
-    </div>
-  </footer>
+      </section>
 
-  <!-- ==========================================================================
-       MAIN JAVASCRIPT
-       ========================================================================== -->
-  <script src="main.js"></script>
+      <!-- ==========================================================================
+           STICKY EXPERTISE LAYANAN SECTION
+           ========================================================================= -->
+      <section id="services" class="bg-neutral-background pb-12 md:pb-24">
+        <div class="max-w-[1440px] mx-auto px-6 md:px-20">
+          <div class="text-center mb-12 md:mb-20 space-y-4 md:space-y-6">
+            <div data-animation-on-scroll="">
+              <span class="inline-block border border-brand-primary rounded-full px-5 py-1.5 font-mono text-[10px] tracking-widest text-brand-primary uppercase font-bold">Layanan Unggulan</span>
+            </div>
+            <h2 data-animation-on-scroll="" class="text-brand-primary text-3xl md:text-5xl font-extrabold tracking-tight">Keahlian Kreatif Kami</h2>
+          </div>
+
+          <!-- Service Block 1: Foto & Video Taking -->
+          <div data-animation-on-scroll="" data-anim-left="true" class="sticky top-24 md:top-32 bg-brand-accent rounded-xl p-8 md:p-20 mb-12 md:mb-20 h-auto md:h-[550px] flex flex-col md:flex-row items-center justify-between gap-10 overflow-hidden group shadow-2xl">
+            <div class="space-y-6 md:space-y-8 flex-1 w-full">
+              <span class="bg-brand-primary text-brand-accent px-4 py-1.5 rounded-full font-mono text-xs uppercase tracking-wider font-bold">01</span>
+              <div class="space-y-4">
+                <h3 class="text-brand-primary text-2xl md:text-4xl font-extrabold">Photo & Video Taking</h3>
+                <p class="text-brand-primary/80 text-base md:text-lg leading-relaxed max-w-md">
+                  Pengambilan foto komersial dan sinematografi video profesional untuk produk Anda. Kami menyusun pencahayaan dan konsep estetis demi melahirkan visual produk yang menggugah minat beli konsumen secara signifikan.
+                </p>
+              </div>
+            </div>
+            <div class="flex-1 w-full h-[250px] md:h-full overflow-hidden rounded-lg">
+              <img src="https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?w=800&h=600&fit=crop" alt="Jasa Foto & Video Produk" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+            </div>
+          </div>
+
+          <!-- Service Block 2: Graphic Design -->
+          <div data-animation-on-scroll="" data-anim-right="true" class="sticky top-28 md:top-40 bg-neutral-white border border-brand-primary/10 rounded-xl p-8 md:p-20 mb-12 md:mb-20 h-auto md:h-[550px] flex flex-col md:flex-row items-center justify-between gap-10 overflow-hidden group shadow-2xl">
+            <div class="space-y-6 md:space-y-8 flex-1 w-full">
+              <span class="bg-brand-primary text-neutral-white px-4 py-1.5 rounded-full font-mono text-xs uppercase tracking-wider font-bold">02</span>
+              <div class="space-y-4">
+                <h3 class="text-brand-primary text-2xl md:text-4xl font-extrabold">Graphic Design</h3>
+                <p class="text-brand-primary/80 text-base md:text-lg leading-relaxed max-w-md">
+                  Penyusunan desain grafis identitas visual untuk brand Anda. Mulai dari logo eksklusif, desain kemasan produk (*packaging*), pamflet promosi, hingga feed media sosial yang tertata estetik dan konsisten secara visual.
+                </p>
+              </div>
+            </div>
+            <div class="flex-1 w-full h-[250px] md:h-full overflow-hidden rounded-lg">
+              <img src="https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg?w=800&h=600&fit=crop" alt="Jasa Desain Grafis Mojokerto" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+            </div>
+          </div>
+
+          <!-- Service Block 3: Website Development -->
+          <div data-animation-on-scroll="" data-anim-left="true" class="sticky top-32 md:top-48 bg-brand-primary text-neutral-white rounded-xl p-8 md:p-20 mb-12 md:mb-20 h-auto md:h-[550px] flex flex-col md:flex-row items-center justify-between gap-10 overflow-hidden group shadow-2xl">
+            <div class="space-y-6 md:space-y-8 flex-1 w-full">
+              <span class="bg-brand-accent text-brand-primary px-4 py-1.5 rounded-full font-mono text-xs uppercase tracking-wider font-bold">03</span>
+              <div class="space-y-4">
+                <h3 class="text-brand-accent text-2xl md:text-4xl font-extrabold">Website Development</h3>
+                <p class="text-neutral-white/80 text-base md:text-lg leading-relaxed max-w-md">
+                  Pembuatan website yang aman, responsif, dan interaktif. Kami membantu merancang profil perusahaan (*company profile*), katalog online, hingga integrasi e-commerce berbasis WordPress agar meningkatkan kredibilitas bisnis Anda di internet.
+                </p>
+              </div>
+            </div>
+            <div class="flex-1 w-full h-[250px] md:h-full overflow-hidden rounded-lg">
+              <img src="https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg?w=800&h=600&fit=crop" alt="Pembuatan Website Surabaya Jombang" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================================================
+           ETNOS & BRAND VALUES SECTION (TILTED CARDS)
+           ========================================================================== -->
+      <section class="bg-neutral-background py-12 md:py-16 px-6 md:px-20 overflow-hidden">
+        <div class="max-w-7xl mx-auto space-y-12 md:space-y-20">
+          <div class="text-center space-y-4 md:space-y-6">
+            <span data-animation-on-scroll="" class="inline-block border border-brand-primary rounded-full px-5 py-1.5 font-mono text-[10px] tracking-widest text-brand-primary uppercase font-bold">Prinsip Kerja</span>
+            <h2 data-animation-on-scroll="" class="text-brand-primary text-3xl md:text-5xl font-extrabold tracking-tight">Karakteristik Kreatif Mirai</h2>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 relative">
+            <!-- Card 1: Text -->
+            <div class="bg-neutral-white p-8 md:p-10 rounded-xl shadow-card md:tilted-left flex flex-col justify-end min-h-[300px] md:min-h-[350px] z-10" data-animation-on-scroll="">
+              <div class="space-y-4">
+                <h3 class="text-brand-primary text-xl md:text-2xl font-bold">Kolaborasi UMKM</h3>
+                <p class="text-text-muted leading-relaxed text-sm md:text-base">
+                  Bagi kami, UMKM adalah roda ekonomi bangsa. Kami menyusun strategi harga dan bimbingan kreatif yang ramah bagi pelaku usaha mikro demi kemajuan bersama.
+                </p>
+              </div>
+            </div>
+
+            <!-- Card 2: Center Image -->
+            <div class="rounded-xl overflow-hidden shadow-card h-[350px] md:h-[400px] z-20" data-animation-on-scroll="">
+              <img src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?w=600&h=800&fit=crop" alt="Kerja Sama Kreatif" class="w-full h-full object-cover">
+            </div>
+
+            <!-- Card 3: Text -->
+            <div class="bg-brand-accent p-8 md:p-10 rounded-xl shadow-card md:tilted-right flex flex-col justify-end min-h-[300px] md:min-h-[350px] z-10" data-animation-on-scroll="">
+              <div class="space-y-4">
+                <h3 class="text-brand-primary text-xl md:text-2xl font-bold">Visual Estetis & Fungsional</h3>
+                <p class="text-brand-primary/75 leading-relaxed text-sm md:text-base">
+                  Karya visual tidak boleh hanya cantik tapi juga harus komunikatif. Setiap desain dan foto diproyeksikan untuk menarik minat beli dan meningkatkan interaksi audiens.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================================================
+           AFFILIATED SHOWCASE (LULU TRIP INDONESIA)
+           ========================================================================== -->
+      <section id="showcase" class="relative py-24 md:py-40 px-6 md:px-20 overflow-hidden min-h-[500px] md:min-h-[600px] flex items-center justify-center lg:justify-end">
+        <div class="absolute inset-0 z-0">
+          <img src="https://images.pexels.com/photos/2104152/pexels-photo-2104152.jpeg?w=1920&h=1080&fit=crop" alt="Lulu Trip Bromo" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-brand-primary/30 backdrop-grayscale"></div>
+        </div>
+        
+        <div class="relative z-10 max-w-md bg-brand-accent p-8 md:p-12 rounded-xl shadow-card space-y-8" data-animation-on-scroll="">
+          <div class="space-y-4 text-center lg:text-left">
+            <span class="inline-block border border-brand-primary rounded-full px-4 py-1 font-mono text-[10px] tracking-widest text-brand-primary uppercase font-bold">Studi Kasus Kolaborasi</span>
+            <h2 class="text-brand-primary text-3xl md:text-4xl font-extrabold leading-tight tracking-tight">Lulu Trip Indonesia</h2>
+            <p class="text-brand-primary/80 leading-relaxed text-sm md:text-base">
+              Portofolio pengerjaan digital end-to-end kami untuk agen travel premium Jawa Timur dan Bali/Lombok. Mirai Creative Project mendesain identitas brand, materi pemasaran visual, dan mengembangkan arsitektur websitenya.
+            </p>
+          </div>
+          <div class="flex justify-center lg:justify-start">
+            <a href="https://lulutripindonesia.com/" target="_blank" class="inline-block bg-brand-primary text-neutral-white px-8 py-4 rounded-lg font-bold hover:brightness-110 hover:scale-[1.03] transition-all w-full text-center sm:w-auto">
+              Lihat Website Lulu Trip
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================================================
+           INSIGHTS / EDUKASI BLOG GRID
+           ========================================================================== -->
+      <section id="insights" class="bg-neutral-background py-20 md:py-32 px-6 md:px-20">
+        <div class="max-w-7xl mx-auto space-y-12 md:space-y-16">
+          <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
+            <div class="space-y-4 md:space-y-6">
+              <span class="inline-block border border-brand-primary rounded-full px-5 py-1.5 font-mono text-[10px] tracking-widest text-brand-primary uppercase font-bold">Edukasi & Tips</span>
+              <h2 class="text-brand-primary text-3xl md:text-5xl font-extrabold tracking-tight">Ruang Berbagi Ide</h2>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Article 1 -->
+            <article class="bg-neutral-white rounded-lg overflow-hidden group shadow-card flex flex-col" data-animation-on-scroll="">
+              <div class="h-48 md:h-56 overflow-hidden">
+                <img src="https://images.pexels.com/photos/1092670/pexels-photo-1092670.jpeg?w=600&h=400&fit=crop" alt="Branding Visual Bisnis" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+              </div>
+              <div class="p-6 md:p-8 flex-grow space-y-4">
+                <div class="flex items-center gap-4 text-[10px] font-mono uppercase text-text-muted font-bold">
+                  <span>Juni 2026</span>
+                  <span class="w-1.5 h-1.5 bg-brand-primary rounded-full"></span>
+                  <span>Branding</span>
+                </div>
+                <h3 class="text-lg md:text-xl font-bold text-brand-primary leading-snug group-hover:text-brand-primary/70 transition-colors">
+                  Pentingnya Elemen Visual & Branding bagi UMKM
+                </h3>
+                <p class="text-xs md:text-sm text-text-muted line-clamp-3">
+                  Bagaimana penataan identitas visual yang tepat dapat membantu membedakan brand UMKM Anda dari para kompetitor besar di pasar digital.
+                </p>
+              </div>
+            </article>
+
+            <!-- Article 2 -->
+            <article class="bg-neutral-white rounded-lg overflow-hidden group shadow-card flex flex-col" data-animation-on-scroll="" data-delay="1">
+              <div class="h-48 md:h-56 overflow-hidden">
+                <img src="https://images.pexels.com/photos/356079/pexels-photo-356079.jpeg?w=600&h=400&fit=crop" alt="Tips Foto Produk" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+              </div>
+              <div class="p-6 md:p-8 flex-grow space-y-4">
+                <div class="flex items-center gap-4 text-[10px] font-mono uppercase text-text-muted font-bold">
+                  <span>Mei 2026</span>
+                  <span class="w-1.5 h-1.5 bg-brand-primary rounded-full"></span>
+                  <span>Fotografi</span>
+                </div>
+                <h3 class="text-lg md:text-xl font-bold text-brand-primary leading-snug group-hover:text-brand-primary/70 transition-colors">
+                  Tips Foto Produk Estetis dengan Smartphone
+                </h3>
+                <p class="text-xs md:text-sm text-text-muted line-clamp-3">
+                  Tidak harus kamera mahal. Temukan teknik pencahayaan alami dan sudut pandang estetik untuk menghasilkan foto produk berkualitas dengan smartphone Anda.
+                </p>
+              </div>
+            </article>
+
+            <!-- Article 3 -->
+            <article class="bg-neutral-white rounded-lg overflow-hidden group shadow-card flex flex-col" data-animation-on-scroll="" data-delay="2">
+              <div class="h-48 md:h-56 overflow-hidden">
+                <img src="https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?w=600&h=400&fit=crop" alt="Kelebihan WordPress" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+              </div>
+              <div class="p-6 md:p-8 flex-grow space-y-4">
+                <div class="flex items-center gap-4 text-[10px] font-mono uppercase text-text-muted font-bold">
+                  <span>April 2026</span>
+                  <span class="w-1.5 h-1.5 bg-brand-primary rounded-full"></span>
+                  <span>Teknologi</span>
+                </div>
+                <h3 class="text-lg md:text-xl font-bold text-brand-primary leading-snug group-hover:text-brand-primary/70 transition-colors">
+                  Mengapa WordPress Terbaik untuk Situs Bisnis Anda?
+                </h3>
+                <p class="text-xs md:text-sm text-text-muted line-clamp-3">
+                  Analisis keunggulan WordPress dalam hal kemudahan kustomisasi, integrasi SEO yang kuat, dan keramahan bagi pemilik bisnis UMKM.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================================================
+           CONTACT & INTAKE FORM SECTION
+           ========================================================================== -->
+      <section id="contact" class="bg-brand-primary py-24 md:py-32 px-6 md:px-20 text-center relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 pointer-events-none">
+          <img src="https://images.pexels.com/photos/1595391/pexels-photo-1595391.jpeg?w=1920&h=1080&fit=crop" alt="Pola Kantor" class="w-full h-full object-cover">
+        </div>
+        
+        <div class="max-w-4xl mx-auto space-y-12 relative z-10" data-animation-on-scroll="">
+          <h2 class="text-brand-accent text-4xl md:text-6xl font-extrabold tracking-tight leading-[1.1]">
+            Mari Wujudkan Brand Impian Anda Bersama.
+          </h2>
+          
+          <!-- Contact Form Card -->
+          <div class="bg-neutral-white text-left p-8 md:p-12 rounded-xl shadow-2xl max-w-2xl mx-auto space-y-6">
+            <h3 class="text-brand-primary text-xl md:text-2xl font-bold text-center border-b border-brand-primary/10 pb-4">Formulir Konsultasi Layanan</h3>
+            
+            <form id="contact-form" class="space-y-6" novalidate>
+              <div class="relative form-group">
+                <input type="text" id="form-name" class="form-input w-full border border-brand-primary/20 rounded-lg px-4 py-3 text-brand-primary bg-transparent focus:border-brand-primary focus:ring-2 focus:ring-brand-accent outline-none transition-all placeholder-transparent" placeholder="Nama Lengkap" required>
+                <label for="form-name" class="form-label absolute left-4 top-3 text-sm text-brand-primary/60 transition-all pointer-events-none">Nama Lengkap</label>
+                <span class="form-feedback text-xs text-red-500 mt-1 hidden" id="feedback-name">Harap masukkan nama lengkap Anda.</span>
+              </div>
+              
+              <div class="relative form-group">
+                <input type="email" id="form-email" class="form-input w-full border border-brand-primary/20 rounded-lg px-4 py-3 text-brand-primary bg-transparent focus:border-brand-primary focus:ring-2 focus:ring-brand-accent outline-none transition-all placeholder-transparent" placeholder="Alamat Email" required>
+                <label for="form-email" class="form-label absolute left-4 top-3 text-sm text-brand-primary/60 transition-all pointer-events-none">Alamat Email</label>
+                <span class="form-feedback text-xs text-red-500 mt-1 hidden" id="feedback-email">Harap masukkan alamat email yang valid.</span>
+              </div>
+
+              <div class="relative form-group">
+                <select id="form-service" class="form-input w-full border border-brand-primary/20 rounded-lg px-4 py-3 text-brand-primary bg-transparent focus:border-brand-primary focus:ring-2 focus:ring-brand-accent outline-none transition-all" required>
+                  <option value="" disabled selected>Pilih Layanan</option>
+                  <option value="photo-video">Photo & Video Taking</option>
+                  <option value="graphic-design">Graphic Design & Branding</option>
+                  <option value="web-development">Website Development</option>
+                  <option value="full-management">Kombinasi / Full Brand Management</option>
+                </select>
+                <span class="form-feedback text-xs text-red-500 mt-1 hidden" id="feedback-service">Harap tentukan layanan yang Anda butuhkan.</span>
+              </div>
+              
+              <div class="relative form-group">
+                <textarea id="form-details" class="form-input w-full border border-brand-primary/20 rounded-lg px-4 py-3 text-brand-primary bg-transparent focus:border-brand-primary focus:ring-2 focus:ring-brand-accent outline-none transition-all placeholder-transparent h-28" placeholder="Detail Proyek" required></textarea>
+                <label for="form-details" class="form-label absolute left-4 top-3 text-sm text-brand-primary/60 transition-all pointer-events-none">Jelaskan kebutuhan produk atau brand Anda...</label>
+                <span class="form-feedback text-xs text-red-500 mt-1 hidden" id="feedback-details">Harap jelaskan detail kebutuhan proyek Anda.</span>
+              </div>
+              
+              <button type="submit" class="w-full bg-brand-accent text-brand-primary font-extrabold px-6 py-4 rounded-lg hover:scale-[1.01] hover:brightness-110 active:scale-[0.99] transition-all text-center">
+                Kirim Pesan Konsultasi
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ==========================================================================
+         FOOTER
+         ========================================================================== -->
+    <footer class="bg-brand-primary text-neutral-white pt-20 md:pt-32 pb-12 md:pb-20 px-6 md:px-20 overflow-hidden relative">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-20">
+        <!-- Left Footer Content -->
+        <div class="space-y-8 md:space-y-12">
+          <div class="space-y-4">
+            <h2 class="text-brand-accent text-4xl md:text-5xl font-extrabold leading-tight tracking-tight uppercase">
+              MIRAI CREATIVE
+            </h2>
+            <p class="text-neutral-white/80 max-w-md text-sm md:text-base leading-relaxed">
+              Membangun materi kreatif visual premium untuk memajukan pertumbuhan usaha Anda. Kami percaya materi promosi berkualitas adalah hak setiap UMKM.
+            </p>
+          </div>
+          
+          <div class="max-w-md space-y-6">
+            <p class="text-neutral-white/70 font-semibold text-sm">Alamat Kantor & Operasional</p>
+            <p class="text-neutral-white/60 text-xs md:text-sm">
+              Jawa Timur, Indonesia (Menjangkau area Jombang, Mojokerto, Surabaya, dan sekitarnya).
+            </p>
+          </div>
+        </div>
+
+        <!-- Right Footer Links -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-10">
+          <div class="space-y-6">
+            <h5 class="text-brand-accent font-bold text-lg">Layanan Utama</h5>
+            <ul class="space-y-4 text-neutral-white/75 text-sm">
+              <li><a href="#services" class="hover:text-brand-accent transition-colors">Fotografi & Videografi</a></li>
+              <li><a href="#services" class="hover:text-brand-accent transition-colors">Desain Grafis & Logo</a></li>
+              <li><a href="#services" class="hover:text-brand-accent transition-colors">Pembuatan Website</a></li>
+              <li><a href="#services" class="hover:text-brand-accent transition-colors">Brand Management</a></li>
+            </ul>
+          </div>
+          <div class="space-y-6">
+            <h5 class="text-brand-accent font-bold text-lg">Hubungi Kami</h5>
+            <ul class="space-y-4 text-neutral-white/75 text-sm">
+              <li><a href="mailto:miraicreativeproject@gmail.com" class="hover:text-brand-accent transition-colors">miraicreativeproject@gmail.com</a></li>
+              <li><a href="https://wa.me/6281333855835" class="hover:text-brand-accent transition-colors">+62 813-3385-5835 (WhatsApp)</a></li>
+              <li><a href="https://www.instagram.com/mirai.pro/" class="hover:text-brand-accent transition-colors">Instagram @mirai.pro</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="max-w-7xl mx-auto mt-20 md:mt-32 pt-8 border-t border-neutral-white/10 flex flex-col md:flex-row justify-between items-start gap-8">
+        <div class="text-neutral-white/60 text-sm">
+          &copy; 2026 Mirai Creative Project. Hak Cipta Dilindungi.
+        </div>
+        <p class="max-w-4xl text-neutral-white/40 text-[10px] leading-relaxed">
+          Semua visual dan studi kasus, termasuk Lulu Trip Indonesia, adalah hak milik eksklusif atau dikembangkan secara kemitraan oleh agensi Mirai Creative Project. Hubungi kami untuk informasi kerja sama lebih lanjut.
+        </p>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- JavaScript Behavior File -->
+  <script src="./main.js"></script>
 </body>
 </html>

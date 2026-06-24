@@ -1,190 +1,131 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   /* ==========================================================================
-     STICKY HEADER SCROLL EFFECT
+     1. STICKY HEADER — CSS-class-driven scroll state
      ========================================================================== */
   const header = document.getElementById('main-header');
-  const handleScroll = () => {
-    if (window.scrollY > 50) {
-      header.classList.add('scrolled');
-      header.querySelector('nav').classList.add('bg-[rgba(10,34,64,0.95)]', 'shadow-lg');
-      header.querySelector('nav').classList.remove('bg-[rgba(237,236,233,0.93)]');
-      // Change logo and menu link color states to light when scrolled since nav turns dark
-      const logoImg = header.querySelector('.logo-img');
-      if (logoImg) {
-        logoImg.classList.add('brightness-0', 'invert');
-      }
-      header.querySelectorAll('.nav-desktop-link').forEach(link => {
-        link.classList.remove('text-brand-primary', 'hover:bg-black/5');
-        link.classList.add('text-neutral-white', 'hover:bg-white/10');
-      });
-      // Toggle menu toggle button color
-      const menuToggle = document.getElementById('menu-toggle');
-      if (menuToggle) {
-        menuToggle.classList.remove('text-brand-primary');
-        menuToggle.classList.add('text-brand-accent');
-      }
-    } else {
-      header.classList.remove('scrolled');
-      header.querySelector('nav').classList.remove('bg-[rgba(10,34,64,0.95)]', 'shadow-lg');
-      header.querySelector('nav').classList.add('bg-[rgba(237,236,233,0.93)]');
-      // Reset color states
-      const logoImg = header.querySelector('.logo-img');
-      if (logoImg) {
-        logoImg.classList.remove('brightness-0', 'invert');
-      }
-      header.querySelectorAll('.nav-desktop-link').forEach(link => {
-        link.classList.add('text-brand-primary', 'hover:bg-black/5');
-        link.classList.remove('text-neutral-white', 'hover:bg-white/10');
-      });
-      const menuToggle = document.getElementById('menu-toggle');
-      if (menuToggle) {
-        menuToggle.classList.add('text-brand-primary');
-        menuToggle.classList.remove('text-brand-accent');
-      }
-    }
-  };
 
-  window.addEventListener('scroll', handleScroll);
-  handleScroll(); // Run initially
+  if (header) {
+    const onScroll = () => {
+      header.classList.toggle('is-scrolled', window.scrollY > 50);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll(); // Apply correct state on first load
+  }
 
   /* ==========================================================================
-     MOBILE NAVIGATION DRAWER
+     2. MOBILE NAVIGATION DRAWER
      ========================================================================== */
   const menuToggle = document.getElementById('menu-toggle');
   const mobileMenu = document.getElementById('mobile-menu');
 
   if (menuToggle && mobileMenu) {
-    const toggleMenu = () => {
-      mobileMenu.classList.toggle('opacity-0');
-      mobileMenu.classList.toggle('pointer-events-none');
-      mobileMenu.classList.toggle('-translate-y-4');
-    };
-
+    // Toggle drawer open/closed
     menuToggle.addEventListener('click', (e) => {
       e.stopPropagation();
-      toggleMenu();
+      const isOpen = mobileMenu.classList.toggle('is-open');
+      menuToggle.setAttribute('aria-expanded', isOpen);
     });
 
-    // Close menu when clicking navigation link
+    // Close on any nav link click
     mobileMenu.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
-        mobileMenu.classList.add('opacity-0', 'pointer-events-none', '-translate-y-4');
+        mobileMenu.classList.remove('is-open');
+        menuToggle.setAttribute('aria-expanded', 'false');
       });
     });
 
-    // Close mobile menu if clicked outside
+    // Close on outside click
     document.addEventListener('click', (e) => {
-      if (!mobileMenu.contains(e.target) && !menuToggle.contains(e.target) && !mobileMenu.classList.contains('opacity-0')) {
-        mobileMenu.classList.add('opacity-0', 'pointer-events-none', '-translate-y-4');
+      if (!header.contains(e.target)) {
+        mobileMenu.classList.remove('is-open');
+        menuToggle.setAttribute('aria-expanded', 'false');
       }
     });
   }
 
   /* ==========================================================================
-     INTERSECTION OBSERVER FOR SCROLL REVEALS
+     3. SCROLL REVEAL — IntersectionObserver
      ========================================================================== */
-  const observerOptions = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.15
-  };
-
-  const scrollObserver = new IntersectionObserver((entries) => {
+  const revealObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('animate-on-scroll-visible');
-        // Optional: stop observing once visible
-        scrollObserver.unobserve(entry.target);
+        observer.unobserve(entry.target); // Observe once only
       }
     });
-  }, observerOptions);
+  }, {
+    rootMargin: '0px',
+    threshold: 0.12
+  });
 
-  document.querySelectorAll('[data-animation-on-scroll]').forEach(element => {
-    element.classList.add('animate-on-scroll-hidden');
-    
-    // Add specific transition directions from attributes
-    if (element.hasAttribute('data-anim-left')) {
-      element.classList.add('animate-from-left');
-    } else if (element.hasAttribute('data-anim-right')) {
-      element.classList.add('animate-from-right');
-    }
+  document.querySelectorAll('[data-animation-on-scroll]').forEach(el => {
+    el.classList.add('animate-on-scroll-hidden');
 
-    // Add delays if specified
-    if (element.hasAttribute('data-delay')) {
-      const delay = element.getAttribute('data-delay');
-      element.classList.add(`reveal-delay-${delay}`);
-    }
+    if (el.hasAttribute('data-anim-left'))  el.classList.add('animate-from-left');
+    if (el.hasAttribute('data-anim-right')) el.classList.add('animate-from-right');
 
-    scrollObserver.observe(element);
+    const delay = el.getAttribute('data-delay');
+    if (delay) el.classList.add(`reveal-delay-${delay}`);
+
+    revealObserver.observe(el);
   });
 
   /* ==========================================================================
-     CONTACT / INTAKE FORM VALIDATION & HANDLING
+     4. CONTACT FORM — Validation & Submission
      ========================================================================== */
   const contactForm = document.getElementById('contact-form');
-  if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      
-      let isValid = true;
-      const name = document.getElementById('form-name');
-      const email = document.getElementById('form-email');
-      const details = document.getElementById('form-details');
-      const service = document.getElementById('form-service');
+  if (!contactForm) return;
 
-      // Clear previous feedbacks
-      document.querySelectorAll('.form-feedback').forEach(el => el.classList.add('hidden'));
+  const fields = {
+    name:    { input: document.getElementById('form-name'),    feedback: document.getElementById('feedback-name') },
+    email:   { input: document.getElementById('form-email'),   feedback: document.getElementById('feedback-email') },
+    service: { input: document.getElementById('form-service'), feedback: document.getElementById('feedback-service') },
+    details: { input: document.getElementById('form-details'), feedback: document.getElementById('feedback-details') },
+  };
 
-      // Validate Name
-      if (!name.value.trim()) {
-        document.getElementById('feedback-name').classList.remove('hidden');
-        isValid = false;
-      }
+  const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-      // Validate Email
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!email.value.trim() || !emailRegex.test(email.value.trim())) {
-        document.getElementById('feedback-email').classList.remove('hidden');
-        isValid = false;
-      }
+  const clearFeedback = () =>
+    Object.values(fields).forEach(({ feedback }) => feedback.classList.add('hidden'));
 
-      // Validate Project Details
-      if (!details.value.trim()) {
-        document.getElementById('feedback-details').classList.remove('hidden');
-        isValid = false;
-      }
+  const showFeedback = (key) => {
+    fields[key].feedback.classList.remove('hidden');
+  };
 
-      // Validate Service selection
-      if (!service.value.trim()) {
-        document.getElementById('feedback-service').classList.remove('hidden');
-        isValid = false;
-      }
+  const validate = () => {
+    clearFeedback();
+    let valid = true;
 
-      if (isValid) {
-        // Success feedback simulation
-        const submitBtn = contactForm.querySelector('button[type="submit"]');
-        const originalText = submitBtn.textContent;
-        submitBtn.disabled = true;
-        submitBtn.textContent = 'Mengirim Pesan...';
+    if (!fields.name.input.value.trim())                              { showFeedback('name');    valid = false; }
+    if (!EMAIL_REGEX.test(fields.email.input.value.trim()))           { showFeedback('email');   valid = false; }
+    if (!fields.service.input.value)                                  { showFeedback('service'); valid = false; }
+    if (!fields.details.input.value.trim())                           { showFeedback('details'); valid = false; }
 
-        setTimeout(() => {
-          submitBtn.textContent = 'Pesan Terkirim!';
-          submitBtn.classList.remove('bg-brand-accent', 'text-brand-primary');
-          submitBtn.classList.add('bg-green-500', 'text-white');
-          
-          // Clear inputs
-          contactForm.reset();
+    return valid;
+  };
 
-          // Reset button after 3 seconds
-          setTimeout(() => {
-            submitBtn.disabled = false;
-            submitBtn.textContent = originalText;
-            submitBtn.classList.remove('bg-green-500', 'text-white');
-            submitBtn.classList.add('bg-brand-accent', 'text-brand-primary');
-          }, 3000);
-        }, 1500);
-      }
-    });
-  }
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (!validate()) return;
+
+    const submitBtn = contactForm.querySelector('button[type="submit"]');
+    const originalText = submitBtn.textContent;
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Mengirim Pesan…';
+
+    // Simulate async submission (replace with real API call if needed)
+    setTimeout(() => {
+      submitBtn.textContent = '✓ Pesan Terkirim!';
+      submitBtn.style.cssText = 'background-color: var(--color-primary); color: var(--color-accent); opacity: 0.85;';
+      contactForm.reset();
+
+      setTimeout(() => {
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalText;
+        submitBtn.removeAttribute('style');
+      }, 3500);
+    }, 1500);
+  });
+
 });

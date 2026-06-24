@@ -1,50 +1,17 @@
-/* Scroll Reveal Animations */
-.animate-on-scroll-hidden {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+/* ==========================================================================
+   MIRAI CREATIVE PROJECT — Custom Stylesheet
+   Companion to Tailwind CSS (loaded after Tailwind CDN)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. GLOBAL RESETS & BASE
+   -------------------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-.animate-from-left {
-  transform: translateX(-60px);
-}
-
-.animate-from-right {
-  transform: translateX(60px);
-}
-
-.animate-on-scroll-visible {
-  opacity: 1;
-  transform: translate(0, 0) !important;
-}
-
-.reveal-delay-1 {
-  transition-delay: 0.1s;
-}
-
-.reveal-delay-2 {
-  transition-delay: 0.2s;
-}
-
-.reveal-delay-3 {
-  transition-delay: 0.3s;
-}
-
-/* Sticky Header Transitions */
-#main-header {
-  transition: padding 0.3s ease-in-out, background-color 0.3s ease-in-out;
-}
-
-#main-header.scrolled {
-  padding: 0.5rem 0;
-}
-
-/* Mobile Menu Transition */
-#mobile-menu {
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease-in-out;
-}
-
-/* Base Styles & Resets */
 html {
   scroll-behavior: smooth;
   -webkit-tap-highlight-color: transparent;
@@ -54,43 +21,168 @@ body {
   overflow-x: hidden;
 }
 
-/* Sticky stacking services sections */
-.sticky-section {
-  position: sticky;
-  top: 80px;
+/* --------------------------------------------------------------------------
+   2. CSS CUSTOM PROPERTIES (Design Tokens)
+   -------------------------------------------------------------------------- */
+:root {
+  --color-primary:   rgb(10, 34, 64);
+  --color-accent:    rgb(246, 245, 242);
+  --color-white:     rgb(255, 255, 255);
+  --color-bg:        rgb(246, 245, 242);
+  --easing-smooth:   cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-base: 0.3s ease;
 }
 
-/* Tilted elements on Desktop only to prevent horizontal overflow on smaller viewports */
+/* --------------------------------------------------------------------------
+   3. STICKY HEADER
+   -------------------------------------------------------------------------- */
+#main-header {
+  transition: padding var(--transition-base);
+}
+
+#main-header nav {
+  transition: background-color 0.35s ease, box-shadow 0.35s ease, color 0.2s ease;
+}
+
+/* State applied by JS when page is scrolled */
+#main-header.is-scrolled nav {
+  background-color: rgba(10, 34, 64, 0.96);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
+}
+
+#main-header.is-scrolled nav .nav-desktop-link {
+  color: var(--color-accent);
+}
+
+#main-header.is-scrolled nav .nav-desktop-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+#main-header.is-scrolled .logo-img {
+  filter: brightness(0) invert(1);
+}
+
+#main-header.is-scrolled #menu-toggle {
+  color: var(--color-accent);
+}
+
+/* --------------------------------------------------------------------------
+   4. MOBILE NAVIGATION DRAWER
+   -------------------------------------------------------------------------- */
+#mobile-menu {
+  /* Positioned absolutely within the nav container */
+  position: absolute;
+  top: calc(100% + 0.75rem);
+  left: 0;
+  right: 0;
+  /* Transition state — hidden by default */
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-8px);
+  transition:
+    opacity 0.28s var(--easing-smooth),
+    transform 0.28s var(--easing-smooth);
+  z-index: 50;
+}
+
+#mobile-menu.is-open {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+/* --------------------------------------------------------------------------
+   5. SCROLL REVEAL ANIMATIONS
+   -------------------------------------------------------------------------- */
+.animate-on-scroll-hidden {
+  opacity: 0;
+  transform: translateY(36px);
+  transition:
+    opacity 0.9s var(--easing-smooth),
+    transform 0.9s var(--easing-smooth);
+}
+
+.animate-from-left {
+  transform: translateX(-56px);
+}
+
+.animate-from-right {
+  transform: translateX(56px);
+}
+
+/* Single visible class resets all directions */
+.animate-on-scroll-visible {
+  opacity: 1 !important;
+  transform: translate(0, 0) !important;
+}
+
+/* Staggered delays for card grids */
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.22s; }
+.reveal-delay-3 { transition-delay: 0.34s; }
+
+/* --------------------------------------------------------------------------
+   6. TILTED CARDS (Principles section — desktop only)
+   -------------------------------------------------------------------------- */
 @media (min-width: 768px) {
   .tilted-left {
-    transform: translateX(-30px) translateY(-20px) rotate(-3deg);
-    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateX(-24px) translateY(-16px) rotate(-2.5deg);
+    transition: transform 0.5s var(--easing-smooth);
   }
   .tilted-left:hover {
-    transform: translateX(-15px) translateY(-10px) rotate(-1deg);
+    transform: translateX(-10px) translateY(-6px) rotate(-0.8deg);
   }
 
   .tilted-right {
-    transform: translateX(30px) translateY(20px) rotate(4deg);
-    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateX(24px) translateY(16px) rotate(2.5deg);
+    transition: transform 0.5s var(--easing-smooth);
   }
   .tilted-right:hover {
-    transform: translateX(15px) translateY(10px) rotate(1deg);
+    transform: translateX(10px) translateY(6px) rotate(0.8deg);
   }
 }
 
-/* Gradient Fade Mask */
-.mask-fade {
-  mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 25.5%, rgb(0, 0, 0) 74.5%, rgba(0, 0, 0, 0) 100%);
+/* --------------------------------------------------------------------------
+   7. CONTACT FORM — Floating Labels
+   -------------------------------------------------------------------------- */
+.form-group {
+  position: relative;
 }
 
-/* Custom form transitions */
+.form-input {
+  transition: border-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+/* Float the label when input is focused or has a value */
 .form-input:focus ~ .form-label,
 .form-input:not(:placeholder-shown) ~ .form-label {
-  top: -0.5rem;
-  left: 0.75rem;
-  font-size: 0.75rem;
-  color: rgb(246, 245, 242);
-  background-color: rgb(10, 34, 64);
-  padding: 0 0.25rem;
+  top: -0.55rem;
+  left: 0.65rem;
+  font-size: 0.7rem;
+  line-height: 1;
+  color: var(--color-accent);
+  background-color: var(--color-primary);
+  padding: 0.1rem 0.3rem;
+  border-radius: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   8. RESPONSIVE UTILITIES
+   -------------------------------------------------------------------------- */
+
+/* Prevent images from causing overflow on small viewports */
+img {
+  max-width: 100%;
+}
+
+/* Ensure all sections don't exceed viewport width */
+section, footer, header {
+  max-width: 100vw;
+}
+
+/* Fix for iOS Safari 100vh bug */
+@supports (-webkit-touch-callout: none) {
+  .min-h-screen {
+    min-height: -webkit-fill-available;
+  }
 }

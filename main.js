@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const handleScroll = () => {
     if (window.scrollY > 50) {
       header.classList.add('scrolled');
-      header.querySelector('nav').classList.add('bg-[rgba(11,49,51,0.95)]', 'shadow-lg');
+      header.querySelector('nav').classList.add('bg-[rgba(10,34,64,0.95)]', 'shadow-lg');
       header.querySelector('nav').classList.remove('bg-[rgba(237,236,233,0.93)]');
       // Change logo and menu link color states to light when scrolled since nav turns dark
       const logoImg = header.querySelector('.logo-img');
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     } else {
       header.classList.remove('scrolled');
-      header.querySelector('nav').classList.remove('bg-[rgba(11,49,51,0.95)]', 'shadow-lg');
+      header.querySelector('nav').classList.remove('bg-[rgba(10,34,64,0.95)]', 'shadow-lg');
       header.querySelector('nav').classList.add('bg-[rgba(237,236,233,0.93)]');
       // Reset color states
       const logoImg = header.querySelector('.logo-img');
